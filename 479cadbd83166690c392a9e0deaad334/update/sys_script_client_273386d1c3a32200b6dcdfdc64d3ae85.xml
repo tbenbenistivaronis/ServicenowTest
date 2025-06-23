@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>assignment_group</field>
+        <global>true</global>
+        <isolate_script>false</isolate_script>
+        <messages/>
+        <name>Empty assigned_to on group change</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+	if (isLoading)
+		return;
+
+	// Need to get the form value, in case it changes but then changes back to value in database (oldValue is always DB value)
+	if (oldValue != newValue)
+		g_scratchpad.formValue = newValue;
+
+	if (newValue === '' || newValue == null || oldValue != newValue || newValue != g_scratchpad.formValue) {
+		if(newValue && g_form.getValue("assigned_to")){
+			var groupLookupGr = new GlideRecord('sys_user_grmember');
+			groupLookupGr.addQuery('group.sys_id', newValue);
+			groupLookupGr.addQuery('user', g_form.getValue("assigned_to"));
+			groupLookupGr.setLimit(1);
+			groupLookupGr.query(groupLookupCallback);
+		} else {
+			g_form.setValue("assigned_to", "");
+		}
+	}
+}
+
+function groupLookupCallback(groupLookupGr){
+	if (!groupLookupGr.hasNext())
+		g_form.setValue("assigned_to", "");
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-12-06 16:18:51</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path/>
+        <sys_id>273386d1c3a32200b6dcdfdc64d3ae85</sys_id>
+        <sys_mod_count>36</sys_mod_count>
+        <sys_name>Empty assigned_to on group change</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Incident Management Best Practice - Jakarta" source="com.snc.best_practice.incident.jakarta">b3fb7f74e11712105590bd68cbbecb83</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TzachGitTest">479cadbd83166690c392a9e0deaad334</sys_scope>
+        <sys_update_name>sys_script_client_273386d1c3a32200b6dcdfdc64d3ae85</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-23 11:39:45</sys_updated_on>
+        <table>incident</table>
+        <type>onChange</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+    <sys_claim action="INSERT_OR_UPDATE">
+        <claim_owner_scope display_value="TzachGitTest">479cadbd83166690c392a9e0deaad334</claim_owner_scope>
+        <claim_timestamp>1979c964dad0000002</claim_timestamp>
+        <metadata_update_name>sys_script_client_273386d1c3a32200b6dcdfdc64d3ae85</metadata_update_name>
+        <previous_claim_app_version>1.0.0</previous_claim_app_version>
+        <previous_claim_name>TzachGitTest</previous_claim_name>
+        <previous_claim_scope>479cadbd83166690c392a9e0deaad334</previous_claim_scope>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-23 11:39:45</sys_created_on>
+        <sys_id>5aad21bd83566690c392a9e0deaad318</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-23 11:39:45</sys_updated_on>
+    </sys_claim>
+    <sys_claim action="INSERT_OR_UPDATE">
+        <claim_owner_scope display_value="TzachGitTest">479cadbd83166690c392a9e0deaad334</claim_owner_scope>
+        <claim_timestamp>1979c964dad0000001</claim_timestamp>
+        <metadata_update_name>sys_script_client_273386d1c3a32200b6dcdfdc64d3ae85</metadata_update_name>
+        <previous_claim_app_version/>
+        <previous_claim_name>com.snc.best_practice.incident.jakarta</previous_claim_name>
+        <previous_claim_scope>com.snc.best_practice.incident.j</previous_claim_scope>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-23 11:39:45</sys_created_on>
+        <sys_id>1ead21bd83566690c392a9e0deaad318</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-23 11:39:45</sys_updated_on>
+    </sys_claim>
+</record_update>

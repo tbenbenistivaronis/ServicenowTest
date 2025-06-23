@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action">
+    <sys_ui_policy_action action="INSERT_OR_UPDATE">
+        <cleared>false</cleared>
+        <disabled>ignore</disabled>
+        <field>actions_taken</field>
+        <field_message/>
+        <field_message_type/>
+        <mandatory>ignore</mandatory>
+        <sys_class_name>sys_ui_policy_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-08-12 13:29:46</sys_created_on>
+        <sys_id>d1c037910b2003005775aabcb4673aa8</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>actions_taken</sys_name>
+        <sys_package display_value="Global" source="global">global</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TzachGitTest">479cadbd83166690c392a9e0deaad334</sys_scope>
+        <sys_update_name>sys_ui_policy_action_d1c037910b2003005775aabcb4673aa8</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-23 11:39:58</sys_updated_on>
+        <table>incident</table>
+        <ui_policy display_value="Hide Major Incident and Actions Taken when major incident state is empty">06a0f3910b2003005775aabcb4673a4a</ui_policy>
+        <value/>
+        <value_action/>
+        <visible>false</visible>
+    </sys_ui_policy_action>
+    <sys_translated_text action="delete_multiple" query="documentkey=d1c037910b2003005775aabcb4673aa8"/>
+    <sys_claim action="INSERT_OR_UPDATE">
+        <claim_owner_scope display_value="TzachGitTest">479cadbd83166690c392a9e0deaad334</claim_owner_scope>
+        <claim_timestamp>1979c9681ad0000001</claim_timestamp>
+        <metadata_update_name>sys_ui_policy_action_d1c037910b2003005775aabcb4673aa8</metadata_update_name>
+        <previous_claim_app_version>1.0.0</previous_claim_app_version>
+        <previous_claim_name>TzachGitTest</previous_claim_name>
+        <previous_claim_scope>479cadbd83166690c392a9e0deaad334</previous_claim_scope>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-23 11:39:58</sys_created_on>
+        <sys_id>25bda1bd83566690c392a9e0deaad375</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-23 11:39:58</sys_updated_on>
+    </sys_claim>
+</record_update>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>caller_id</field>
+        <global>true</global>
+        <isolate_script>false</isolate_script>
+        <messages/>
+        <name>(BP) Set Location to User</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading) {
+   if ((isLoading && !g_form.isNewRecord()) || (g_form.isLiveUpdating && g_form.isLiveUpdating()))
+      return;
+
+   if (newValue == '' || newValue == null) {
+      g_form.clearValue('location');
+      return;
+   }
+   if (!g_form.hasField('location'))
+      return;
+   var caller = g_form.getReference('caller_id', setLocation);
+}
+
+function setLocation(caller) {
+   if (caller && caller.location)
+       g_form.setValue('location', caller.location);
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>glide.maint</sys_created_by>
+        <sys_created_on>2009-02-10 03:54:54</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path/>
+        <sys_id>5e524025c0a80166004d1761e85e2058</sys_id>
+        <sys_mod_count>23</sys_mod_count>
+        <sys_name>(BP) Set Location to User</sys_name>
+        <sys_overrides display_value="">global</sys_overrides>
+        <sys_package display_value="Best Practice - Incident Resolution Workflow" source="com.snc.bestpractice.incident">6f29ff74e1d312105590bd68cbbecbd5</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TzachGitTest">479cadbd83166690c392a9e0deaad334</sys_scope>
+        <sys_update_name>sys_script_client_5e524025c0a80166004d1761e85e2058</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-23 11:39:45</sys_updated_on>
+        <table>incident</table>
+        <type>onChange</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+    <sys_claim action="INSERT_OR_UPDATE">
+        <claim_owner_scope display_value="TzachGitTest">479cadbd83166690c392a9e0deaad334</claim_owner_scope>
+        <claim_timestamp>1979c964d390000001</claim_timestamp>
+        <metadata_update_name>sys_script_client_5e524025c0a80166004d1761e85e2058</metadata_update_name>
+        <previous_claim_app_version>1.0.0</previous_claim_app_version>
+        <previous_claim_name>TzachGitTest</previous_claim_name>
+        <previous_claim_scope>479cadbd83166690c392a9e0deaad334</previous_claim_scope>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-23 11:39:45</sys_created_on>
+        <sys_id>1ead21bd83566690c392a9e0deaad30c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-23 11:39:45</sys_updated_on>
+    </sys_claim>
+    <sys_claim action="INSERT_OR_UPDATE">
+        <claim_owner_scope display_value="TzachGitTest">479cadbd83166690c392a9e0deaad334</claim_owner_scope>
+        <claim_timestamp>1979c964d380000001</claim_timestamp>
+        <metadata_update_name>sys_script_client_5e524025c0a80166004d1761e85e2058</metadata_update_name>
+        <previous_claim_app_version/>
+        <previous_claim_name>com.snc.bestpractice.incident</previous_claim_name>
+        <previous_claim_scope>com.snc.bestpractice.incident</previous_claim_scope>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-23 11:39:45</sys_created_on>
+        <sys_id>dead21bd83566690c392a9e0deaad30c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-23 11:39:45</sys_updated_on>
+    </sys_claim>
+</record_update>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action">
+    <sys_ui_policy_action action="INSERT_OR_UPDATE">
+        <cleared>false</cleared>
+        <disabled>ignore</disabled>
+        <field>route_reason</field>
+        <field_message/>
+        <field_message_type/>
+        <mandatory>ignore</mandatory>
+        <sys_class_name>sys_ui_policy_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-04-06 03:42:36</sys_created_on>
+        <sys_id>505d623873001010cbb654eb7df6a7d9</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>route_reason</sys_name>
+        <sys_package display_value="Incident Updates" source="com.snc.incident.updates">cfec7ff8e11712105590bd68cbbecbec</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TzachGitTest">479cadbd83166690c392a9e0deaad334</sys_scope>
+        <sys_update_name>sys_ui_policy_action_505d623873001010cbb654eb7df6a7d9</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-23 11:39:56</sys_updated_on>
+        <table>incident</table>
+        <ui_policy display_value="Show Route Reason when incident is routed to universal request">3498a7dc73330010cbb654eb7df6a70e</ui_policy>
+        <value/>
+        <value_action/>
+        <visible>true</visible>
+    </sys_ui_policy_action>
+    <sys_translated_text action="delete_multiple" query="documentkey=505d623873001010cbb654eb7df6a7d9"/>
+    <sys_claim action="INSERT_OR_UPDATE">
+        <claim_owner_scope display_value="TzachGitTest">479cadbd83166690c392a9e0deaad334</claim_owner_scope>
+        <claim_timestamp>1979c967a4d0000001</claim_timestamp>
+        <metadata_update_name>sys_ui_policy_action_505d623873001010cbb654eb7df6a7d9</metadata_update_name>
+        <previous_claim_app_version>1.0.0</previous_claim_app_version>
+        <previous_claim_name>TzachGitTest</previous_claim_name>
+        <previous_claim_scope>479cadbd83166690c392a9e0deaad334</previous_claim_scope>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-23 11:39:56</sys_created_on>
+        <sys_id>c9bd61bd83566690c392a9e0deaad39a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-23 11:39:56</sys_updated_on>
+    </sys_claim>
+    <sys_claim action="INSERT_OR_UPDATE">
+        <claim_owner_scope display_value="TzachGitTest">479cadbd83166690c392a9e0deaad334</claim_owner_scope>
+        <claim_timestamp>1979c967a4c0000001</claim_timestamp>
+        <metadata_update_name>sys_ui_policy_action_505d623873001010cbb654eb7df6a7d9</metadata_update_name>
+        <previous_claim_app_version/>
+        <previous_claim_name>com.snc.incident.updates</previous_claim_name>
+        <previous_claim_scope>com.snc.incident.updates</previous_claim_scope>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-23 11:39:56</sys_created_on>
+        <sys_id>8dbd61bd83566690c392a9e0deaad39a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-23 11:39:56</sys_updated_on>
+    </sys_claim>
+</record_update>

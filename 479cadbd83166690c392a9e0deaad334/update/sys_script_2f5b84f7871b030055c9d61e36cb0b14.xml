@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>incident</collection>
+        <condition>gs.getProperty("com.snc.incident.incident_alert.closure") == "true"</condition>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition table="incident">stateCHANGESTO7^ORstateCHANGESTO8^EQ<item display_value="Closed" endquery="false" field="state" goto="false" newquery="false" operator="CHANGESTO" or="false" value="7"/>
+            <item display_value="Canceled" endquery="false" field="state" goto="false" newquery="false" operator="CHANGESTO" or="true" value="8"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Cascade Closure of ICPs</name>
+        <order>110</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous) {
+
+	var incidentSysId = current.sys_id;
+	var incDisplayValue = current.getDisplayValue();
+	var IA_INACTIVE_STATES = "cancelled,closed";
+	var IA_CLOSED_STATE = "closed";
+	var IA_CANCELLED_STATE = "cancelled";
+	var incAlertGr = new GlideRecord("incident_alert");
+	incAlertGr.addQuery("source_incident", incidentSysId);
+	incAlertGr.addQuery("state", "NOT IN", IA_INACTIVE_STATES);
+	incAlertGr.query();
+	if(incAlertGr)
+		onIncidentStateChange(current.state);
+
+	function onIncidentStateChange(state) {
+		while(incAlertGr.next()) {
+			var msg;
+			var IAState = incAlertGr.getValue("state");
+			if(IAState == "new" || IAState == "work_in_progress") {
+				if(state == IncidentState.CLOSED)
+					msg = gs.getMessage("Incident Communication Plan is Canceled based on closure of {0}", incDisplayValue);
+				else if(state == IncidentState.CANCELED)
+					msg = gs.getMessage("Incident Communication Plan is Canceled based on cancelation of {0}", incDisplayValue);
+				incAlertGr.work_notes = msg;
+				incAlertGr.setValue("state", IA_CANCELLED_STATE);
+				incAlertGr.update();
+			}
+			else if (IAState == "open") {
+				if(state == IncidentState.CLOSED) {
+					msg = gs.getMessage("Incident Communication Plan is Closed based on closure of {0}", incDisplayValue);
+					incAlertGr.setValue("state", IA_CLOSED_STATE);
+				}
+				else if(state == IncidentState.CANCELED) {
+					msg = gs.getMessage("Incident Communication Plan is Canceled based on cancelation of {0}", incDisplayValue);
+					incAlertGr.setValue("state", IA_CANCELLED_STATE);
+				}
+
+				incAlertGr.work_notes = msg;
+				incAlertGr.update();
+			}
+			else if(IAState == "resolved") {
+				if(state == IncidentState.CLOSED)
+					msg = gs.getMessage("Incident Communication Plan is Closed based on closure of {0}", incDisplayValue);
+				else if(state == IncidentState.CANCELED)
+					msg = gs.getMessage("Incident Communication Plan is Closed based on cancelation of {0}", incDisplayValue);
+				incAlertGr.work_notes = msg;
+				incAlertGr.setValue("state", IA_CLOSED_STATE);
+				incAlertGr.update();
+			}
+		}
+	}
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-01-03 08:05:49</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>2f5b84f7871b030055c9d61e36cb0b14</sys_id>
+        <sys_mod_count>21</sys_mod_count>
+        <sys_name>Cascade Closure of ICPs</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Incident Communications Management" source="com.snc.iam">7aab630383292610c392a9e0deaad363</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TzachGitTest">479cadbd83166690c392a9e0deaad334</sys_scope>
+        <sys_update_name>sys_script_2f5b84f7871b030055c9d61e36cb0b14</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-23 11:39:29</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=2f5b84f7871b030055c9d61e36cb0b14"/>
+    <sys_claim action="INSERT_OR_UPDATE">
+        <claim_owner_scope display_value="TzachGitTest">479cadbd83166690c392a9e0deaad334</claim_owner_scope>
+        <claim_timestamp>1979c9610800000001</claim_timestamp>
+        <metadata_update_name>sys_script_2f5b84f7871b030055c9d61e36cb0b14</metadata_update_name>
+        <previous_claim_app_version>1.0.0</previous_claim_app_version>
+        <previous_claim_name>TzachGitTest</previous_claim_name>
+        <previous_claim_scope>479cadbd83166690c392a9e0deaad334</previous_claim_scope>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-23 11:39:29</sys_created_on>
+        <sys_id>6e9d6d7d83566690c392a9e0deaad368</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-23 11:39:29</sys_updated_on>
+    </sys_claim>
+    <sys_claim action="INSERT_OR_UPDATE">
+        <claim_owner_scope display_value="TzachGitTest">479cadbd83166690c392a9e0deaad334</claim_owner_scope>
+        <claim_timestamp>19797a4d63c0000002</claim_timestamp>
+        <metadata_update_name>sys_script_2f5b84f7871b030055c9d61e36cb0b14</metadata_update_name>
+        <previous_claim_app_version>1.0.0</previous_claim_app_version>
+        <previous_claim_name>GitHub Integration</previous_claim_name>
+        <previous_claim_scope>f32e582d83d6e290c392a9e0deaad384</previous_claim_scope>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-23 11:39:29</sys_created_on>
+        <sys_id>e69d6d7d83566690c392a9e0deaad369</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-23 11:39:29</sys_updated_on>
+    </sys_claim>
+    <sys_claim action="INSERT_OR_UPDATE">
+        <claim_owner_scope display_value="TzachGitTest">479cadbd83166690c392a9e0deaad334</claim_owner_scope>
+        <claim_timestamp>19797a4d63c0000001</claim_timestamp>
+        <metadata_update_name>sys_script_2f5b84f7871b030055c9d61e36cb0b14</metadata_update_name>
+        <previous_claim_app_version/>
+        <previous_claim_name>com.snc.iam</previous_claim_name>
+        <previous_claim_scope>com.snc.iam</previous_claim_scope>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-23 11:39:29</sys_created_on>
+        <sys_id>269d6d7d83566690c392a9e0deaad369</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-23 11:39:29</sys_updated_on>
+    </sys_claim>
+</record_update>
