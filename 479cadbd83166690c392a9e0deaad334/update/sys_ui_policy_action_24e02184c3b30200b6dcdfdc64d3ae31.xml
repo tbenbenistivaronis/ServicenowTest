@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action">
+    <sys_ui_policy_action action="INSERT_OR_UPDATE">
+        <cleared>false</cleared>
+        <disabled>ignore</disabled>
+        <field>hold_reason</field>
+        <field_message/>
+        <field_message_type/>
+        <mandatory>true</mandatory>
+        <sys_class_name>sys_ui_policy_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2015-11-13 10:27:58</sys_created_on>
+        <sys_id>24e02184c3b30200b6dcdfdc64d3ae31</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>hold_reason</sys_name>
+        <sys_package display_value="Incident Management - Core" source="com.snc.incident_management">251b7730e11712105590bd68cbbecbb0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TzachGitTest">479cadbd83166690c392a9e0deaad334</sys_scope>
+        <sys_update_name>sys_ui_policy_action_24e02184c3b30200b6dcdfdc64d3ae31</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-23 11:39:59</sys_updated_on>
+        <table>incident</table>
+        <ui_policy display_value="When state is On Hold the On hold reason field is visible and mandatory">d8e02184c3b30200b6dcdfdc64d3ae30</ui_policy>
+        <value/>
+        <value_action/>
+        <visible>true</visible>
+    </sys_ui_policy_action>
+    <sys_translated_text action="delete_multiple" query="documentkey=24e02184c3b30200b6dcdfdc64d3ae31"/>
+    <sys_claim action="INSERT_OR_UPDATE">
+        <claim_owner_scope display_value="TzachGitTest">479cadbd83166690c392a9e0deaad334</claim_owner_scope>
+        <claim_timestamp>1979c96845c0000001</claim_timestamp>
+        <metadata_update_name>sys_ui_policy_action_24e02184c3b30200b6dcdfdc64d3ae31</metadata_update_name>
+        <previous_claim_app_version>1.0.0</previous_claim_app_version>
+        <previous_claim_name>TzachGitTest</previous_claim_name>
+        <previous_claim_scope>479cadbd83166690c392a9e0deaad334</previous_claim_scope>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-23 11:39:59</sys_created_on>
+        <sys_id>f5bda1bd83566690c392a9e0deaad3d5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-23 11:39:59</sys_updated_on>
+    </sys_claim>
+    <sys_claim action="INSERT_OR_UPDATE">
+        <claim_owner_scope display_value="TzachGitTest">479cadbd83166690c392a9e0deaad334</claim_owner_scope>
+        <claim_timestamp>1979c96845b0000001</claim_timestamp>
+        <metadata_update_name>sys_ui_policy_action_24e02184c3b30200b6dcdfdc64d3ae31</metadata_update_name>
+        <previous_claim_app_version/>
+        <previous_claim_name>com.snc.incident_management</previous_claim_name>
+        <previous_claim_scope>com.snc.incident_management</previous_claim_scope>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-23 11:39:59</sys_created_on>
+        <sys_id>b9bda1bd83566690c392a9e0deaad3d5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-23 11:39:59</sys_updated_on>
+    </sys_claim>
+</record_update>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>actions_taken</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>On Call Escalation Tracker</name>
+        <order/>
+        <script><![CDATA[function onLoad() {
+	if (NOW && NOW.on_call)
+		NOW.on_call.triggerRecordWatcher();
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-04-09 14:30:55</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path/>
+        <sys_id>a73e944653801010bf68ddeeff7b126b</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>On Call Escalation Tracker</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="On-Call Scheduling" source="com.snc.on_call_rotation">475cb338e11712105590bd68cbbecb27</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TzachGitTest">479cadbd83166690c392a9e0deaad334</sys_scope>
+        <sys_update_name>sys_script_client_a73e944653801010bf68ddeeff7b126b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-23 11:39:44</sys_updated_on>
+        <table>incident</table>
+        <type>onLoad</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+    <sys_claim action="INSERT_OR_UPDATE">
+        <claim_owner_scope display_value="TzachGitTest">479cadbd83166690c392a9e0deaad334</claim_owner_scope>
+        <claim_timestamp>1979c9648ea0000002</claim_timestamp>
+        <metadata_update_name>sys_script_client_a73e944653801010bf68ddeeff7b126b</metadata_update_name>
+        <previous_claim_app_version>1.0.0</previous_claim_app_version>
+        <previous_claim_name>TzachGitTest</previous_claim_name>
+        <previous_claim_scope>479cadbd83166690c392a9e0deaad334</previous_claim_scope>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-23 11:39:44</sys_created_on>
+        <sys_id>4eaded7d83566690c392a9e0deaad396</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-23 11:39:44</sys_updated_on>
+    </sys_claim>
+    <sys_claim action="INSERT_OR_UPDATE">
+        <claim_owner_scope display_value="TzachGitTest">479cadbd83166690c392a9e0deaad334</claim_owner_scope>
+        <claim_timestamp>1979c9648ea0000001</claim_timestamp>
+        <metadata_update_name>sys_script_client_a73e944653801010bf68ddeeff7b126b</metadata_update_name>
+        <previous_claim_app_version/>
+        <previous_claim_name>com.snc.on_call_rotation</previous_claim_name>
+        <previous_claim_scope>com.snc.on_call_rotation</previous_claim_scope>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-23 11:39:44</sys_created_on>
+        <sys_id>02aded7d83566690c392a9e0deaad397</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-23 11:39:44</sys_updated_on>
+    </sys_claim>
+</record_update>

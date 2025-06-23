@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>incident</collection>
+        <condition>current.isValidField("parent_incident") &amp;&amp; !gs.nil(current.getValue("parent_incident") ) &amp;&amp; !gs.nil(current.getValue("major_incident_state") )</condition>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Child incident cannot be major incident</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+	if ("accepted" == current.getValue("major_incident_state")) {
+		current.setAbortAction(true);
+		var link = '<a href="' + current.getLink() + '">' + current.number + '</a>';
+		gs.addErrorMessage(gs.getMessage("Major Incident {0} cannot be a child of an Incident", link));
+	} else {
+		current.setValue("major_incident_state", "");
+		gs.addInfoMessage(gs.getMessage('{0} is no longer a Major Incident Candidate', current.getDisplayValue()));
+	}
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-08-02 08:52:54</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>a83197ca3b10030050bec9bb34efc4a8</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name>Child incident cannot be major incident</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Major Incident Management" source="sn_major_inc_mgmt">2efa4be5db0003004d27b31be0b8f5e9</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TzachGitTest">479cadbd83166690c392a9e0deaad334</sys_scope>
+        <sys_update_name>sys_script_a83197ca3b10030050bec9bb34efc4a8</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-23 11:39:30</sys_updated_on>
+        <template/>
+        <when>before</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=a83197ca3b10030050bec9bb34efc4a8"/>
+    <sys_claim action="INSERT_OR_UPDATE">
+        <claim_owner_scope display_value="TzachGitTest">479cadbd83166690c392a9e0deaad334</claim_owner_scope>
+        <claim_timestamp>1979c96134d0000001</claim_timestamp>
+        <metadata_update_name>sys_script_a83197ca3b10030050bec9bb34efc4a8</metadata_update_name>
+        <previous_claim_app_version>1.0.0</previous_claim_app_version>
+        <previous_claim_name>TzachGitTest</previous_claim_name>
+        <previous_claim_scope>479cadbd83166690c392a9e0deaad334</previous_claim_scope>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-23 11:39:30</sys_created_on>
+        <sys_id>6a9d6d7d83566690c392a9e0deaad3c1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-23 11:39:30</sys_updated_on>
+    </sys_claim>
+    <sys_claim action="INSERT_OR_UPDATE">
+        <claim_owner_scope display_value="TzachGitTest">479cadbd83166690c392a9e0deaad334</claim_owner_scope>
+        <claim_timestamp>19797a4d8cf0000001</claim_timestamp>
+        <metadata_update_name>sys_script_a83197ca3b10030050bec9bb34efc4a8</metadata_update_name>
+        <previous_claim_app_version>1.0.0</previous_claim_app_version>
+        <previous_claim_name>GitHub Integration</previous_claim_name>
+        <previous_claim_scope>f32e582d83d6e290c392a9e0deaad384</previous_claim_scope>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-23 11:39:30</sys_created_on>
+        <sys_id>229d6d7d83566690c392a9e0deaad3c2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-23 11:39:30</sys_updated_on>
+    </sys_claim>
+</record_update>

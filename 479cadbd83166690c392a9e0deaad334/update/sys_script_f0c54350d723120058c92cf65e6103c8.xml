@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>false</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>incident</collection>
+        <condition>(current.assigned_to.changes() || current.active.changes()) &amp;&amp; !current.assigned_to.nil() &amp;&amp; current.active == true</condition>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Update User Task State</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+
+	// Add your code here
+	var userStatsUtil = new global.UserTaskStatsUtil();
+	userStatsUtil.incrementTaskAssigned(current.assigned_to);	
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-05-18 22:35:38</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>f0c54350d723120058c92cf65e6103c8</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Update User Task State</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Incident Assignment Workbench Demo" source="com.snc.incident_assignment_workbench_demo">be4b345283982a10c392a9e0deaad30e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TzachGitTest">479cadbd83166690c392a9e0deaad334</sys_scope>
+        <sys_update_name>sys_script_f0c54350d723120058c92cf65e6103c8</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-23 11:39:31</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=f0c54350d723120058c92cf65e6103c8"/>
+    <sys_claim action="INSERT_OR_UPDATE">
+        <claim_owner_scope display_value="TzachGitTest">479cadbd83166690c392a9e0deaad334</claim_owner_scope>
+        <claim_timestamp>1979c9616010000001</claim_timestamp>
+        <metadata_update_name>sys_script_f0c54350d723120058c92cf65e6103c8</metadata_update_name>
+        <previous_claim_app_version>1.0.0</previous_claim_app_version>
+        <previous_claim_name>TzachGitTest</previous_claim_name>
+        <previous_claim_scope>479cadbd83166690c392a9e0deaad334</previous_claim_scope>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-23 11:39:31</sys_created_on>
+        <sys_id>369d6d7d83566690c392a9e0deaad3fb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-23 11:39:31</sys_updated_on>
+    </sys_claim>
+    <sys_claim action="INSERT_OR_UPDATE">
+        <claim_owner_scope display_value="TzachGitTest">479cadbd83166690c392a9e0deaad334</claim_owner_scope>
+        <claim_timestamp>19797a4db990000001</claim_timestamp>
+        <metadata_update_name>sys_script_f0c54350d723120058c92cf65e6103c8</metadata_update_name>
+        <previous_claim_app_version>1.0.0</previous_claim_app_version>
+        <previous_claim_name>GitHub Integration</previous_claim_name>
+        <previous_claim_scope>f32e582d83d6e290c392a9e0deaad384</previous_claim_scope>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-23 11:39:31</sys_created_on>
+        <sys_id>be9d6d7d83566690c392a9e0deaad3fb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-23 11:39:31</sys_updated_on>
+    </sys_claim>
+    <sys_claim action="INSERT_OR_UPDATE">
+        <claim_owner_scope display_value="TzachGitTest">479cadbd83166690c392a9e0deaad334</claim_owner_scope>
+        <claim_timestamp>19797a4db980000001</claim_timestamp>
+        <metadata_update_name>sys_script_f0c54350d723120058c92cf65e6103c8</metadata_update_name>
+        <previous_claim_app_version/>
+        <previous_claim_name>com.snc.incident_assignment_work</previous_claim_name>
+        <previous_claim_scope>com.snc.incident_assignment_work</previous_claim_scope>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-23 11:39:31</sys_created_on>
+        <sys_id>fa9d6d7d83566690c392a9e0deaad3fb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-23 11:39:31</sys_updated_on>
+    </sys_claim>
+</record_update>

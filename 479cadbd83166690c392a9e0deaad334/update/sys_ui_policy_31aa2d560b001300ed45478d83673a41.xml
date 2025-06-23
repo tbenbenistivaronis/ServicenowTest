@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_policy">
+    <sys_ui_policy action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <conditions table="incident">hold_reason=1^state=3^EQ<item display_value="Awaiting Caller" endquery="false" field="hold_reason" goto="false" newquery="false" operator="=" or="false" value="1"/>
+            <item display_value="On Hold" endquery="false" field="state" goto="false" newquery="false" operator="=" or="false" value="3"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </conditions>
+        <description/>
+        <global>true</global>
+        <inherit>false</inherit>
+        <isolate_script>false</isolate_script>
+        <model_id/>
+        <model_table/>
+        <on_load>false</on_load>
+        <order>200</order>
+        <reverse_if_false>true</reverse_if_false>
+        <run_scripts>false</run_scripts>
+        <script_false><![CDATA[function onCondition() {}]]></script_false>
+        <script_true><![CDATA[function onCondition() {}]]></script_true>
+        <set_values/>
+        <short_description>Make the field 'Additional Comments' mandatory when the On Hold Reason is 'Awaiting Caller'</short_description>
+        <sys_class_name>sys_ui_policy</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-02-05 05:57:18</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path/>
+        <sys_id>31aa2d560b001300ed45478d83673a41</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>Make the field 'Additional Comments' mandatory when the On Hold Reason is 'Awaiting Caller'</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Incident Management Best Practice - Jakarta" source="com.snc.best_practice.incident.jakarta">b3fb7f74e11712105590bd68cbbecb83</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TzachGitTest">479cadbd83166690c392a9e0deaad334</sys_scope>
+        <sys_update_name>sys_ui_policy_31aa2d560b001300ed45478d83673a41</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-23 11:39:59</sys_updated_on>
+        <table>incident</table>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_ui_policy>
+    <sys_claim action="INSERT_OR_UPDATE">
+        <claim_owner_scope display_value="TzachGitTest">479cadbd83166690c392a9e0deaad334</claim_owner_scope>
+        <claim_timestamp>1979c9683f00000001</claim_timestamp>
+        <metadata_update_name>sys_ui_policy_31aa2d560b001300ed45478d83673a41</metadata_update_name>
+        <previous_claim_app_version>1.0.0</previous_claim_app_version>
+        <previous_claim_name>TzachGitTest</previous_claim_name>
+        <previous_claim_scope>479cadbd83166690c392a9e0deaad334</previous_claim_scope>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-23 11:39:59</sys_created_on>
+        <sys_id>75bda1bd83566690c392a9e0deaad3c9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-23 11:39:59</sys_updated_on>
+    </sys_claim>
+    <sys_claim action="INSERT_OR_UPDATE">
+        <claim_owner_scope display_value="TzachGitTest">479cadbd83166690c392a9e0deaad334</claim_owner_scope>
+        <claim_timestamp>1979c9683ef0000001</claim_timestamp>
+        <metadata_update_name>sys_ui_policy_31aa2d560b001300ed45478d83673a41</metadata_update_name>
+        <previous_claim_app_version/>
+        <previous_claim_name>com.snc.best_practice.incident.jakarta</previous_claim_name>
+        <previous_claim_scope>com.snc.best_practice.incident.j</previous_claim_scope>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-23 11:39:59</sys_created_on>
+        <sys_id>39bda1bd83566690c392a9e0deaad3c9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-23 11:39:59</sys_updated_on>
+    </sys_claim>
+</record_update>
